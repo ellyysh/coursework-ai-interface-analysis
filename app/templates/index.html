@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClarityAnalyzer — визуальный аудит интерфейсов</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1>🧠 ClarityAnalyzer</h1>
+            <p class="subtitle">Автоматический анализ визуальной перегруженности веб-интерфейсов</p>
+        </header>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📸</div>
+            <p>Перетащите скриншот или нажмите для выбора</p>
+            <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" hidden>
+            <button class="btn btn-outline" id="selectBtn">Выбрать файл</button>
+        </div>
+
+        <div class="preview-container" id="previewContainer" style="display: none;">
+            <img id="previewImg" alt="Preview">
+            <button class="btn-clear" id="clearBtn">✕</button>
+        </div>
+
+        <button class="btn btn-primary" id="analyzeBtn" disabled>🔍 Запустить анализ</button>
+
+        <div id="loadingIndicator" class="loading hidden">
+            <div class="spinner"></div>
+            <span>Анализируем интерфейс...</span>
+        </div>
+
+        <div id="results" class="results hidden">
+            <div class="score-card">
+                <div class="score-value" id="clarityScore">—</div>
+                <div class="score-label">Индекс чистоты интерфейса (0–10)</div>
+            </div>
+            <div class="issues-list" id="issuesList"></div>
+            <div class="heatmap-note" id="heatmapNote"></div>
+            <div class="meta-info" id="metaInfo"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "peft_type": "LORA",
+    "task_type": "CAUSAL_LM",
+    "r": 64,
+    "lora_alpha": 128,
+    "target_modules": ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+    "lora_dropout": 0.1,
+    "bias": "none",
+    "fan_in_fan_out": false,
+    "modules_to_save": null,
+    "init_lora_weights": true,
+    "layers_to_transform": null,
+    "layers_pattern": null,
+    "base_model_name_or_path": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "peft_version": "0.10.0"
+  }

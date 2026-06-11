@@ -1,0 +1,222 @@
+:root {
+    --bg: #f0f2f5;
+    --card: rgba(255, 255, 255, 0.9);
+    --text: #1a1a2e;
+    --primary: #4361ee;
+    --primary-dark: #3a0ca3;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #f44336;
+    --border-radius: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.glass-container {
+    max-width: 800px;
+    width: 100%;
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4361ee, #7209b7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: #4a5568;
+    margin-top: 0.5rem;
+}
+
+.upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.upload-area:hover {
+    border-color: var(--primary);
+    background: rgba(67, 97, 238, 0.05);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 40px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    margin-top: 1rem;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.preview-container {
+    position: relative;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.preview-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    background: #f1f5f9;
+}
+
+.btn-clear {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.05);
+    border-radius: 2rem;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e2e8f0;
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.results {
+    margin-top: 2rem;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.score-card {
+    text-align: center;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.score-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.issues-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.issue-item {
+    background: white;
+    border-left: 5px solid var(--warning);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.issue-type {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.severity-high { border-left-color: var(--danger); }
+.severity-medium { border-left-color: var(--warning); }
+.severity-low { border-left-color: var(--success); }
+
+.recommendation {
+    font-size: 0.9rem;
+    color: #334155;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.hidden { display: none; }
