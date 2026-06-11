@@ -15,14 +15,13 @@
 ## Установка и запуск
 
 1. Клонирование репозитория:
-   git clone https://github.com/your-username/coursework-ai-interface-analysis.git
+   git clone https://github.com/ellyysh/coursework-ai-interface-analysis.git
    cd coursework-ai-interface-analysis
 
 2. Установка зависимостей:
    pip install -r requirements.txt
 
-3. Загрузка весов LoRA-адаптеров по ссылке: https://drive.google.com/your-link
-   После скачивания разместите папку lora_checkpoint в корне проекта.
+3. Загрузка весов LoRA-адаптеров
 
 4. Запуск веб-сервиса:
    python app/app.py
@@ -55,3 +54,7 @@
 Trainable параметров: 84,934,656 (0.12% от всех)
 Валидационная потеря: 1.79
 Точность на валидации: 85%
+
+
+
+*Из-за большого веса модели, пока запуск доступен только на локальном пк где происходило обучение
